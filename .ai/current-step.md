@@ -1,10 +1,10 @@
-Current Step: STEP 1
+Current Step: STEP 2
 
-Title: Initialize Next.js Frontend
+Title: Basic Application Layout & Structure
 
 Status:
 - ✅ FINALIZED
-- Documentation created: docs/steps/step-1.md
+- Documentation created: docs/steps/step-2.md
 
 Ready for:
-- STEP 2 (waiting for user instruction)
+- STEP 3 (waiting for user instruction)
