@@ -99,3 +99,9 @@ After this step, you should know:
 4. **What `globals.css` vs `page.module.css` means** — global styles vs component-scoped styles
 5. **How to run the project** — `cd frontend && npm run dev`
 6. **What `@/` imports are** — a shortcut to avoid ugly relative paths like `../../..`
+
+## 8. Visual Walkthrough
+
+After initializing Next.js, the default starter page is successfully served at `http://localhost:3000`:
+
+![Next.js default start page](file:///C:/Users/Ali/.gemini/antigravity/brain/dcac9a34-4c4b-43f7-afb0-4cca8b410c33/nextjs_starter_page_1773833391418.png)

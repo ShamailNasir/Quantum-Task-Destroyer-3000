@@ -69,3 +69,7 @@ After this step, you should know:
 2. **How to build a simple component**: A `.js` file for the React code, a `.module.css` file for the styling, and an `index.js` to expose it cleanly.
 3. **How persistent layouts work**: Putting the `Header` in `layout.js` makes it render on every single route without needing to copy-paste it into every `page.js` file.
 4. **Why Design Tokens matter**: Using CSS variables (`var(--color-bg)`) makes the app easy to theme and guarantees colors match perfectly everywhere.
+
+## 8. Visual Walkthrough
+
+The UI transitioned from the crowded Next.js default page to our custom layout. The page featured a clean, sticky Header bar reading "⚡ Quantum Task Destroyer" with a simple, centered greeting message in the main content area.
