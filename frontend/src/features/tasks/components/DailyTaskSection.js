@@ -5,7 +5,14 @@ const CATEGORY_ICONS = {
   Study: '📚', Health: '💪', Growth: '🌱', Personal: '✨', General: '📋',
 };
 
-export default function DailyTaskSection({ groupedTasks, dateStr, isCompletedOn, onToggle, onDelete }) {
+export default function DailyTaskSection({
+  groupedTasks,
+  dateStr,
+  isCompletedOn,
+  onToggle,
+  onDelete,
+  onEdit
+}) {
   const categories = Object.keys(groupedTasks);
 
   if (categories.length === 0) {
@@ -28,6 +35,7 @@ export default function DailyTaskSection({ groupedTasks, dateStr, isCompletedOn,
                 isCompleted={isCompletedOn(task, dateStr)}
                 onToggle={(id) => onToggle(id, dateStr)}
                 onDelete={onDelete}
+                onEdit={onEdit}
               />
             ))}
           </ul>

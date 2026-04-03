@@ -119,6 +119,11 @@ export default function useTasks() {
     return [...daily, ...oneTime];
   };
 
+  // Edit task
+  const editTask = (id, newTitle) => {
+    setTasks(prev => prev.map(t => t.id === id ? { ...t, title: newTitle } : t));
+  };
+
   // Group daily tasks by category
   const getDailyByCategory = () => {
     const daily = getDailyTasks();
@@ -135,6 +140,7 @@ export default function useTasks() {
     addTask,
     toggleTask,
     deleteTask,
+    editTask,
     isLoaded,
     isCompletedOn,
     getDailyTasks,

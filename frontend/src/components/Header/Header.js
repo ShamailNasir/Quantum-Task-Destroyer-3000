@@ -13,6 +13,7 @@ export default function Header() {
           <Link href="/" className={styles.navLink}>Dashboard</Link>
           <Link href="/tasks" className={styles.navLink}>Tasks</Link>
           <Link href="/calendar" className={styles.navLink}>Calendar</Link>
+          <Link href="/insights" className={styles.navLink}>Insights</Link>
         </nav>
       </div>
     </header>

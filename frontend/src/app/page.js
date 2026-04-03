@@ -6,11 +6,13 @@ import WeekStrip from '@/features/dashboard/components/WeekStrip';
 import DailyTaskSection from '@/features/tasks/components/DailyTaskSection';
 import OneTimeTaskSection from '@/features/tasks/components/OneTimeTaskSection';
 import TaskInput from '@/features/tasks/components/TaskInput';
+import FutureYouBanner from '@/components/AI/FutureYouBanner';
+import QuoteCard from '@/components/AI/QuoteCard';
 import styles from './page.module.css';
 
 export default function DashboardPage() {
   const {
-    tasks, addTask, toggleTask, deleteTask,
+    tasks, addTask, toggleTask, deleteTask, editTask,
     isCompletedOn, getDailyByCategory, getOneTimeTasks
   } = useTasks();
 
@@ -25,9 +27,18 @@ export default function DashboardPage() {
   const totalTasks = tasks.length;
   const allCompleted = tasks.filter(t => isCompletedOn(t, selectedDate)).length;
 
+  const currentStats = {
+    dailyTotal: dailyTasks.length,
+    dailyDone,
+    totalTasks,
+    allCompleted
+  };
+
   return (
     <div className={styles.page}>
       <div className={styles.container}>
+        <FutureYouBanner tasks={tasks} />
+        
         <div className={styles.header}>
           <div>
             <h2 className={styles.heading}>Dashboard</h2>
@@ -41,6 +52,8 @@ export default function DashboardPage() {
           tasks={tasks}
           isCompletedOn={isCompletedOn}
         />
+
+        <QuoteCard />
 
         <div className={styles.statsRow}>
           <div className={styles.statCard}>
@@ -61,7 +74,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <TaskInput onAdd={addTask} />
+        <TaskInput onAdd={addTask} tasks={tasks} />
 
         <DailyTaskSection
           groupedTasks={dailyGrouped}
@@ -69,6 +82,7 @@ export default function DashboardPage() {
           isCompletedOn={isCompletedOn}
           onToggle={toggleTask}
           onDelete={deleteTask}
+          onEdit={editTask}
         />
 
         <OneTimeTaskSection
@@ -77,6 +91,7 @@ export default function DashboardPage() {
           isCompletedOn={isCompletedOn}
           onToggle={toggleTask}
           onDelete={deleteTask}
+          onEdit={editTask}
         />
       </div>
     </div>
